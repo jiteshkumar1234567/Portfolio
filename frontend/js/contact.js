@@ -21,11 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
     statusEl.className = "text-gray-400 text-center text-sm";
 
     try {
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      const res = await fetch("https://portfolio-loki.onrender.com/api/contact", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(data)
+});
 
       const result = await res.json();
 
