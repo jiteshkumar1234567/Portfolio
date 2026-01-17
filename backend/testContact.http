@@ -1,0 +1,8 @@
+POST http://localhost:5000/api/contact
+Content-Type: application/json
+
+{
+  "name": "Jitesh Kumar",
+  "email": "jitesh@test.com",
+  "message": "Testing backend via REST Client"
+}
