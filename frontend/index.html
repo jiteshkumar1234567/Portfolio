@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Jitesh Kumar | Full Stack Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -13,6 +14,86 @@
     />
 
     <style>
+       * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    overflow-x: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Ubuntu, sans-serif;
+  }
+
+  /* Glow */
+  .glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(34, 211, 238, 0.25);
+    filter: blur(140px);
+    top: -200px;
+    right: -200px;
+    z-index: -1;
+  }
+
+  /* Navbar underline */
+  .nav-link a {
+    position: relative;
+    padding-bottom: 4px;
+  }
+
+  .nav-link a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #22d3ee, #a855f7);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-link a:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Smooth cards */
+  .group {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .group:hover {
+    transform: translateY(-8px);
+  }
+
+  /* Mobile global spacing fix */
+  @media (max-width: 768px) {
+    section {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    h1 {
+      font-size: 2.25rem !important;
+      line-height: 1.2 !important;
+    }
+
+    h2 {
+      font-size: 2rem !important;
+    }
+
+    .max-w-7xl {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+  }
       body {
         background: radial-gradient(circle at top, #0f172a, #020617);
       }
@@ -440,91 +521,111 @@
       </div>
     </section>
 
-<!-- CERTIFICATIONS -->
-<section id="certifications" class="py-32 relative overflow-hidden bg-black/40">
-  
-  <!-- Glow Background -->
-  <div class="absolute w-[600px] h-[600px] bg-cyan-500/20 blur-[140px] -top-40 -left-40"></div>
-  <div class="absolute w-[500px] h-[500px] bg-purple-500/20 blur-[120px] bottom-0 right-0"></div>
+    <!-- CERTIFICATIONS -->
+    <section
+      id="certifications"
+      class="py-32 relative overflow-hidden bg-black/40"
+    >
+      <!-- Glow Background -->
+      <div
+        class="absolute w-[600px] h-[600px] bg-cyan-500/20 blur-[140px] -top-40 -left-40"
+      ></div>
+      <div
+        class="absolute w-[500px] h-[500px] bg-purple-500/20 blur-[120px] bottom-0 right-0"
+      ></div>
 
-  <h2 class="text-5xl md:text-6xl font-extrabold text-center mb-24">
-    My <span class="text-cyan-400">Certifications</span>
-  </h2>
+      <h2 class="text-5xl md:text-6xl font-extrabold text-center mb-24">
+        My <span class="text-cyan-400">Certifications</span>
+      </h2>
 
-  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 px-12">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 px-12">
+        <!-- MongoDB -->
+        <div
+          class="group relative bg-white/5 backdrop-blur-xl p-10 rounded-3xl border border-white/10 hover:border-emerald-400 hover:-translate-y-4 transition-all duration-500 hover:shadow-[0_0_60px_rgba(16,185,129,0.25)] overflow-hidden"
+        >
+          <!-- Glow Ring -->
+          <div
+            class="absolute inset-0 rounded-3xl border border-emerald-400/20 opacity-0 group-hover:opacity-100 transition"
+          ></div>
 
-    <!-- MongoDB -->
-    <div
-      class="group relative bg-white/5 backdrop-blur-xl p-10 rounded-3xl border border-white/10
-             hover:border-emerald-400 hover:-translate-y-4 transition-all duration-500
-             hover:shadow-[0_0_60px_rgba(16,185,129,0.25)] overflow-hidden">
+          <!-- Icon -->
+          <div
+            class="mb-6 w-14 h-14 flex items-center justify-center rounded-xl bg-emerald-500/10"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+              class="w-8"
+            />
+          </div>
 
-      <!-- Glow Ring -->
-      <div class="absolute inset-0 rounded-3xl border border-emerald-400/20 opacity-0 group-hover:opacity-100 transition"></div>
+          <h3 class="text-2xl font-bold text-emerald-400 mb-3">MongoDB</h3>
 
-      <!-- Icon -->
-      <div class="mb-6 w-14 h-14 flex items-center justify-center rounded-xl bg-emerald-500/10">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-8">
+          <p class="text-gray-400 text-sm leading-relaxed">
+            MongoDB Database Fundamentals, schema design, indexing & CRUD
+            operations.
+          </p>
+        </div>
+
+        <!-- Deloitte -->
+        <div
+          class="group relative bg-white/5 backdrop-blur-xl p-10 rounded-3xl border border-white/10 hover:border-blue-400 hover:-translate-y-4 transition-all duration-500 hover:shadow-[0_0_60px_rgba(59,130,246,0.25)] overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 rounded-3xl border border-blue-400/20 opacity-0 group-hover:opacity-100 transition"
+          ></div>
+
+          <!-- Icon -->
+          <div
+            class="mb-6 w-14 h-14 flex items-center justify-center rounded-xl bg-blue-500/10"
+          >
+            <svg
+              class="w-8 h-8 text-blue-400"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M3 3h18v4H3zM3 10h18v4H3zM3 17h18v4H3z" />
+            </svg>
+          </div>
+
+          <h3 class="text-2xl font-bold text-blue-400 mb-3">
+            Deloitte Technology Job Simulation
+          </h3>
+
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Hands-on experience in software development, debugging, agile
+            workflows & enterprise problem solving.
+          </p>
+        </div>
+
+        <!-- LetsUpgrade -->
+        <div
+          class="group relative bg-white/5 backdrop-blur-xl p-10 rounded-3xl border border-white/10 hover:border-cyan-400 hover:-translate-y-4 transition-all duration-500 hover:shadow-[0_0_60px_rgba(34,211,238,0.25)] overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 rounded-3xl border border-cyan-400/20 opacity-0 group-hover:opacity-100 transition"
+          ></div>
+
+          <!-- Icon -->
+          <div
+            class="mb-6 w-14 h-14 flex items-center justify-center rounded-xl bg-cyan-500/10"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+              class="w-8"
+            />
+          </div>
+
+          <h3 class="text-2xl font-bold text-cyan-400 mb-3">
+            LetsUpgrade – React
+          </h3>
+
+          <p class="text-gray-400 text-sm leading-relaxed">
+            React fundamentals, component architecture, hooks, state management
+            & modern UI development.
+          </p>
+        </div>
       </div>
-
-      <h3 class="text-2xl font-bold text-emerald-400 mb-3">
-        MongoDB
-      </h3>
-
-      <p class="text-gray-400 text-sm leading-relaxed">
-        MongoDB Database Fundamentals, schema design, indexing & CRUD operations.
-      </p>
-    </div>
-
-    <!-- Deloitte -->
-    <div
-      class="group relative bg-white/5 backdrop-blur-xl p-10 rounded-3xl border border-white/10
-             hover:border-blue-400 hover:-translate-y-4 transition-all duration-500
-             hover:shadow-[0_0_60px_rgba(59,130,246,0.25)] overflow-hidden">
-
-      <div class="absolute inset-0 rounded-3xl border border-blue-400/20 opacity-0 group-hover:opacity-100 transition"></div>
-
-      <!-- Icon -->
-      <div class="mb-6 w-14 h-14 flex items-center justify-center rounded-xl bg-blue-500/10">
-        <svg class="w-8 h-8 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M3 3h18v4H3zM3 10h18v4H3zM3 17h18v4H3z"/>
-        </svg>
-      </div>
-
-      <h3 class="text-2xl font-bold text-blue-400 mb-3">
-        Deloitte Technology Job Simulation
-      </h3>
-
-      <p class="text-gray-400 text-sm leading-relaxed">
-        Hands-on experience in software development, debugging, agile workflows & enterprise problem solving.
-      </p>
-    </div>
-
-    <!-- LetsUpgrade -->
-    <div
-      class="group relative bg-white/5 backdrop-blur-xl p-10 rounded-3xl border border-white/10
-             hover:border-cyan-400 hover:-translate-y-4 transition-all duration-500
-             hover:shadow-[0_0_60px_rgba(34,211,238,0.25)] overflow-hidden">
-
-      <div class="absolute inset-0 rounded-3xl border border-cyan-400/20 opacity-0 group-hover:opacity-100 transition"></div>
-
-      <!-- Icon -->
-      <div class="mb-6 w-14 h-14 flex items-center justify-center rounded-xl bg-cyan-500/10">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-8">
-      </div>
-
-      <h3 class="text-2xl font-bold text-cyan-400 mb-3">
-        LetsUpgrade – React
-      </h3>
-
-      <p class="text-gray-400 text-sm leading-relaxed">
-        React fundamentals, component architecture, hooks, state management & modern UI development.
-      </p>
-    </div>
-
-  </div>
-</section>
-
+    </section>
 
     <!-- PROJECTS SECTION -->
     <section id="projects" class="py-28 relative overflow-hidden bg-black/30">
@@ -717,139 +818,113 @@
       </div>
     </section>
 
-   <!-- CONTACT SECTION -->
-<section id="contact" class="py-28 bg-black text-white">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <!-- Heading -->
-    <div class="text-center mb-20">
-      <h2 class="text-4xl md:text-5xl font-bold">
-        Get in <span class="text-cyan-400">Touch</span>
-      </h2>
-      <p class="mt-4 text-gray-400 max-w-xl mx-auto">
-        Have a question or a project in mind?  
-        Feel free to reach out — I usually respond within 24 hours.
-      </p>
-    </div>
-
-    <!-- Content -->
-    <div class="grid lg:grid-cols-2 gap-16 items-start">
-
-      <!-- LEFT -->
-      <div>
-        <h3 class="text-2xl font-semibold mb-4">
-          Let’s work together
-        </h3>
-
-        <p class="text-gray-400 leading-relaxed max-w-lg">
-          I’m a Full Stack MERN Developer focused on building clean,
-          scalable and user-friendly web applications.
-          If you have an idea or project, I’d be happy to discuss it.
-        </p>
-
-        <!-- Info -->
-        <div class="grid sm:grid-cols-2 gap-6 mt-10">
-          <div class="p-5 rounded-xl bg-white/5 border border-white/10">
-            <p class="text-xs text-gray-400 mb-1">Location</p>
-            <p class="font-medium">India 🇮🇳</p>
-          </div>
-
-          <div class="p-5 rounded-xl bg-white/5 border border-white/10">
-            <p class="text-xs text-gray-400 mb-1">Email</p>
-            <p class="font-medium break-all">yjitesh3203@email.com</p>
-          </div>
-        </div>
-
-        <!-- Resume -->
-        <a
-          href="resume.pdf"
-          download
-          class="inline-block mt-10 px-7 py-3 rounded-xl
-                 text-sm font-semibold text-black
-                 bg-cyan-400 hover:bg-cyan-300 transition"
-        >
-          Download Resume
-        </a>
-      </div>
-
-      <!-- FORM -->
-      <form
-        id="contactForm"
-        class="bg-white/5 backdrop-blur-xl
-               p-10 rounded-2xl
-               border border-white/10
-               space-y-6"
-      >
-        <div>
-          <h3 class="text-2xl font-semibold mb-1">
-            Contact me
-          </h3>
-          <p class="text-sm text-gray-400">
-            Send a message and I’ll get back to you.
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-28 bg-black text-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Heading -->
+        <div class="text-center mb-20">
+          <h2 class="text-4xl md:text-5xl font-bold">
+            Get in <span class="text-cyan-400">Touch</span>
+          </h2>
+          <p class="mt-4 text-gray-400 max-w-xl mx-auto">
+            Have a question or a project in mind? Feel free to reach out — I
+            usually respond within 24 hours.
           </p>
         </div>
 
-        <!-- Name -->
-        <div>
-          <label class="text-sm text-gray-400">Your Name</label>
-          <input
-            type="text"
-            id="name"
-            required
-            class="w-full mt-2 px-4 py-3 rounded-lg
-                   bg-black/40 border border-white/10
-                   text-white outline-none
-                   focus:border-cyan-400 transition"
-          />
+        <!-- Content -->
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+          <!-- LEFT -->
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">Let’s work together</h3>
+
+            <p class="text-gray-400 leading-relaxed max-w-lg">
+              I’m a Full Stack MERN Developer focused on building clean,
+              scalable and user-friendly web applications. If you have an idea
+              or project, I’d be happy to discuss it.
+            </p>
+
+            <!-- Info -->
+            <div class="grid sm:grid-cols-2 gap-6 mt-10">
+              <div class="p-5 rounded-xl bg-white/5 border border-white/10">
+                <p class="text-xs text-gray-400 mb-1">Location</p>
+                <p class="font-medium">India 🇮🇳</p>
+              </div>
+
+              <div class="p-5 rounded-xl bg-white/5 border border-white/10">
+                <p class="text-xs text-gray-400 mb-1">Email</p>
+                <p class="font-medium break-all">yjitesh3203@email.com</p>
+              </div>
+            </div>
+
+            <!-- Resume -->
+            <a
+              href="resume.pdf"
+              download
+              class="inline-block mt-10 px-7 py-3 rounded-xl text-sm font-semibold text-black bg-cyan-400 hover:bg-cyan-300 transition"
+            >
+              Download Resume
+            </a>
+          </div>
+
+          <!-- FORM -->
+          <form
+            id="contactForm"
+            class="bg-white/5 backdrop-blur-xl p-10 rounded-2xl border border-white/10 space-y-6"
+          >
+            <div>
+              <h3 class="text-2xl font-semibold mb-1">Contact me</h3>
+              <p class="text-sm text-gray-400">
+                Send a message and I’ll get back to you.
+              </p>
+            </div>
+
+            <!-- Name -->
+            <div>
+              <label class="text-sm text-gray-400">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                required
+                class="w-full mt-2 px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-white outline-none focus:border-cyan-400 transition"
+              />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label class="text-sm text-gray-400">Your Email</label>
+              <input
+                type="email"
+                id="email"
+                required
+                class="w-full mt-2 px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-white outline-none focus:border-cyan-400 transition"
+              />
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label class="text-sm text-gray-400">Your Message</label>
+              <textarea
+                id="message"
+                rows="4"
+                required
+                class="w-full mt-2 px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-white outline-none resize-none focus:border-cyan-400 transition"
+              ></textarea>
+            </div>
+
+            <!-- Button -->
+            <button
+              type="submit"
+              class="w-full py-3 rounded-lg text-black font-semibold bg-cyan-400 hover:bg-cyan-300 transition"
+            >
+              Send Message
+            </button>
+
+            <p id="status" class="text-sm text-center text-gray-400"></p>
+          </form>
         </div>
-
-        <!-- Email -->
-        <div>
-          <label class="text-sm text-gray-400">Your Email</label>
-          <input
-            type="email"
-            id="email"
-            required
-            class="w-full mt-2 px-4 py-3 rounded-lg
-                   bg-black/40 border border-white/10
-                   text-white outline-none
-                   focus:border-cyan-400 transition"
-          />
-        </div>
-
-        <!-- Message -->
-        <div>
-          <label class="text-sm text-gray-400">Your Message</label>
-          <textarea
-            id="message"
-            rows="4"
-            required
-            class="w-full mt-2 px-4 py-3 rounded-lg
-                   bg-black/40 border border-white/10
-                   text-white outline-none resize-none
-                   focus:border-cyan-400 transition"
-          ></textarea>
-        </div>
-
-        <!-- Button -->
-        <button
-          type="submit"
-          class="w-full py-3 rounded-lg
-                 text-black font-semibold
-                 bg-cyan-400 hover:bg-cyan-300
-                 transition"
-        >
-          Send Message
-        </button>
-
-        <p id="status" class="text-sm text-center text-gray-400"></p>
-      </form>
-
-    </div>
-  </div>
-</section>
-
-
+      </div>
+    </section>
 
     <!-- FOOTER -->
     <footer
