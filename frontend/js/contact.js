@@ -56,53 +56,53 @@
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
 
-<script>
-const form = document.getElementById("contactForm");
-const status = document.getElementById("formStatus");
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
 
-form.addEventListener("submit", async function(e){
+  if (!form) return;
 
-e.preventDefault();
+  form.addEventListener("submit", async function (e) {
 
-status.textContent="Sending message...";
-status.className="text-cyan-400 text-center text-sm";
+    e.preventDefault(); // page reload रोकता है
 
-const data=new FormData(form);
+    status.textContent = "Sending message...";
+    status.className = "text-cyan-400 text-center text-sm";
 
-try{
+    const data = new FormData(form);
 
-const response=await fetch(form.action,{
-method:"POST",
-body:data,
-headers:{
-Accept:"application/json"
-}
+    try {
+
+      const response = await fetch("https://formspree.io/f/xvzwqnne", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+
+        status.textContent = "✅ Message sent successfully!";
+        status.className = "text-green-400 text-center text-sm";
+
+        form.reset();
+
+      } else {
+
+        status.textContent = "❌ Something went wrong!";
+        status.className = "text-red-400 text-center text-sm";
+
+      }
+
+    } catch (error) {
+
+      status.textContent = "⚠️ Network error!";
+      status.className = "text-red-400 text-center text-sm";
+
+    }
+
+  });
+
 });
-
-if(response.ok){
-
-status.textContent="✅ Message sent successfully!";
-status.className="text-green-400 text-center text-sm";
-form.reset();
-
-}else{
-
-status.textContent="❌ Something went wrong!";
-status.className="text-red-400 text-center text-sm";
-
-}
-
-}catch(error){
-
-status.textContent="⚠️ Network error!";
-status.className="text-red-400 text-center text-sm";
-
-}
-
-});
-</script>
-
-
-
-
